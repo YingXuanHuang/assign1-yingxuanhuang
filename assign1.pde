@@ -62,10 +62,11 @@ void draw() {
   // robot light
   stroke(255,0,0);  //red
   strokeWeight(10);
-  line(lightX-40-speedLightX,robotY+37,lightX-speedLightX,robotY+37);
-  lightX= robotX+25;
-  speedLightX+=2;
-  speedLightX%=160;
+  
+  speedLightX-=2;
+  lightX= robotX+25+speedLightX;
+  line(lightX,robotY+37,min(lightX+40,robotX+25),robotY+37);
+  
+  speedLightX%=185;
   
 }
-
